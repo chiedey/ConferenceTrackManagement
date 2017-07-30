@@ -102,7 +102,7 @@ $ mocha test/*
   22 passing (21ms)
 ```
 ## 其他
-可以指定多个输入文件，仓库自带了两个数据文件，可以看到不一样的屏幕输出效果
+可以指定多个输入文件，仓库自带了几个数据文件，可以看到不一样的屏幕输出效果
 ```bash
 $ node index.js data/data1.txt data/data2.txt data/data3.txt
 # 或者
@@ -177,6 +177,7 @@ Track 5:
 ## 思路
 该问题本质上带有算法考题的特点，给定输入，经过运算之后输出符合要求的结果，同时这个题目带有实际应用价值，项目根目录下的data目录下面data2.txt文件就是实际生活中的真实数据，所以问题还是挺有意思的。把各个活动安排到日程表里，可以归纳为是经典的01背包问题，每个活动相当于是待放入背包的物品，只能安排或者不安排，活动时长可视为物品的重量，至于活动的价值本项目默认设置为1，以此类推，背包的容量就是每一个时间段的时长，比如09:00到12:00这个sesison期间的时长是180分钟。所以该问题的日程安排算法可以间接通过01背包问题的解法来运算。
 ## 原题
+```bash
 Problem: Conference Track Management
 
 You are planning a big programming conference and have received many proposals which
@@ -245,3 +246,5 @@ Track 2:
 03:00PM Ruby on Rails Legacy App Maintenance 60min
 04:00PM Rails for Python Developers lightning
 05:00PM Networking Event
+
+```

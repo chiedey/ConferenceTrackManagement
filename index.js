@@ -19,7 +19,7 @@ reader.getTalkList(files).then(talkList => {
         this.track = track.generator(tracks.length + 1);
 
         this.track.sessions.forEach(session => {
-            let idxs = ai.knapsackProblem.faker(talks, session, tmp);
+            let idxs = ai.dp.kp.zeroOne(talks, session.timeRemain);
 
             let mark = session.begin;
             idxs.forEach(idx => {
@@ -31,6 +31,8 @@ reader.getTalkList(files).then(talkList => {
                 session.timeRemain -= talk.timeCost;
                 delete talks[idx];
             });
+
+            talks = util.array.clear(talks);
         });
 
         tracks.push(this.track);

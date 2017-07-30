@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/chiedey/ConferenceTrackManagement/issues"
   },
-  "homepage": "https://github.com/chiedey/ConferenceTrackManagement#readme"
+  "homepage": "https://github.com/chiedey/ConferenceTrackManagement#readme",
+  "dependencies": {
+    "chai": "^4.1.0"
+  }
 }

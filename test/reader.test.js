@@ -10,7 +10,7 @@ describe('Testing for reader.js', () => {
         });
     });
 
-    it('[reader.getTalkList()] Should return a array event there have no arguments', () => {
+    it('[reader.getTalkList()] Should return a array even there have no arguments', () => {
         reader.getTalkList().then(ret => {
             expect(ret).to.be.an('array');
         }).catch(err => {

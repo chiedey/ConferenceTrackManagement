@@ -1,4 +1,7 @@
 # Conference Track Management
+## 快速访问
+[@GitHub](https://github.com/chiedey/ConferenceTrackManagement)
+[@NPM](https://www.npmjs.com/package/conference-track-management)
 ## 准备Node.js环境(已经装好Node.js环境略过这一步)
 简易教程，仅供参考
 ```bash

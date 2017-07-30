@@ -1,6 +1,6 @@
 {
   "name": "conference-track-management",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Conference Track Management",
   "main": "index.js",
   "scripts": {

@@ -1,3 +1,4 @@
+//代码配置化
 module.exports = config = {
     timeUnit: 'min',
     lightning: {

@@ -279,7 +279,7 @@ Day 2:
 06:10PM yyyyy yyyyy yyyyy yyyyy 100min
 07:50PM fffff fffff fffff fffff 150min
 10:20PM eeeee eeeee eeeee eeeee 40min
-11:00PM Party Time
+11:00PM Party Finished
 11:15PM wwwww wwwww wwwww wwwww 10min
 11:25PM Sleep
 

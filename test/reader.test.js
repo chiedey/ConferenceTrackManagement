@@ -1,3 +1,4 @@
+const _prepare4Global = require('../index');
 const expect = require('chai').expect;
 const reader = require('../lib/reader');
 

@@ -5,6 +5,8 @@ module.exports = config = {
         symbol: 'lightning',
         timeCost: 5
     },
+    limit: {
+    },
     session: {
         section: {
             split: '-',

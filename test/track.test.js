@@ -1,3 +1,4 @@
+const _prepare4Global = require('../index');
 const expect = require('chai').expect;
 const track  = require('../lib/track');
 

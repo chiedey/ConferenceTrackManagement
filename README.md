@@ -104,7 +104,7 @@ $ mocha test/*
 ## 其他
 可以指定多个输入文件，仓库自带了几个数据文件，可以看到不一样的屏幕输出效果
 ```bash
-$ node index.js data/data1.txt data/data2.txt data/data3.txt
+$ node index.js data/data1.txt data/data2.txt data/data3.txt data/data3plus.txt
 # 或者
 $ node index.js data/*
 ```
@@ -142,38 +142,153 @@ Track 3:
 10:00AM 《资讯数据中心介绍》 60min
 11:00AM 《财经新媒体介绍》 60min
 12:00PM Lunch
+01:00PM bbbbb bbbbb bbbbb bbbbb 50min
+01:50PM aaaaa aaaaa aaaaa aaaaa 120min
+03:50PM 《人事制度介绍》 20min
+04:10PM 《财务制度介绍》 45min
+04:55PM Rails for Python Developers lightning
+05:00PM Networking Event
+
+Track 4:
+09:00AM eeeee eeeee eeeee eeeee 40min
+09:40AM ddddd ddddd ddddd ddddd 60min
+10:40AM ccccc ccccc ccccc ccccc 80min
+12:00PM Lunch
+01:00PM qqqqq qqqqq qqqqq qqqqq 70min
+02:10PM zzzzz zzzzz zzzzz zzzzz 40min
+02:50PM yyyyy yyyyy yyyyy yyyyy 100min
+04:30PM 《行政制度介绍》 30min
+05:00PM Networking Event
+
+Track 5:
+09:00AM kkkkk kkkkk kkkkk kkkkk 90min
+10:30AM rrrrr rrrrr rrrrr rrrrr 35min
+11:05AM xxxxx xxxxx xxxxx xxxxx 55min
+12:00PM Lunch
 01:00PM Do the homework of maths 60min
 02:00PM Do the homework of English 60min
 03:00PM Paly games 120min
 05:00PM Networking Event
 
-Track 4:
-09:00AM Make a call to Dad 10min
-09:10AM Make a call to Mason 40min
-09:50AM Do the homework of Geography 30min
-10:20AM 《人事制度介绍》 20min
-10:40AM 《财务制度介绍》 45min
-11:25AM 《行政制度介绍》 30min
-11:55AM Rails for Python Developers lightning
+Track 6:
+09:00AM Do the homework of Geography 30min
+09:30AM fffff fffff fffff fffff 150min
 12:00PM Lunch
-01:00PM Watering the flowers 10min
-01:10PM Chitchat on line 45min
-01:55PM Online shopping 60min
-02:55PM Have a rest 20min
-03:15PM Do the laundry 45min
-04:00PM Make a call to Mom 60min
+01:00PM Online shopping 50min
+01:50PM Do the laundry 45min
+02:35PM Make a call to Mom 60min
+03:35PM Make a call to Mason 40min
+04:15PM ooooo ooooo ooooo ooooo 25min
+04:40PM sssss sssss sssss sssss 10min
+04:50PM wwwww wwwww wwwww wwwww 10min
 05:00PM Networking Event
 
-Track 5:
+Track 7:
 09:00AM Watch movies 120min
-11:00AM Burn bath 15min
-11:15AM Do housework 45min
+11:00AM Do housework 30min
+11:30AM Have a rest 20min
+11:50AM Make a call to Dad 10min
 12:00PM Lunch
-01:00PM Watch news 20min
-01:20PM Feed a dog 5min
+01:00PM Fit 40min
+01:40PM Watch news 20min
+02:00PM Watering the flowers 5min
+02:05PM Feed a dog 5min
+02:10PM Burn bath 15min
+02:25PM Chitchat on line 45min
 04:00PM Networking Event
 
 ```
+可以看到上面的输出内容比较多，不是很友好，当然这个可以得到有效的控制。接下来的部分将会涉及到如何解决这个问题。
+配置文件相对比较灵活，是可以定制的，我们可以根据实际情况，指定配置文件，先来看怎么指定配置文件（如果未指定，将读取默认配置文件）
+```bash
+$ node index.js --cfg config/config.weekend.js data/data3.txt data/data3plus.txt
+# 或者把--cfg简写成-c
+$ node index.js -c config/config.weekend.js data/data3.txt data/data3plus.txt
+# 可以随意调换参数的位置，放到后面
+$ node index.js data/data3.txt data/data3plus.txt -c config/config.weekend.js
+# 甚至是中间任意位置，都是没问题的
+$ node index.js data/data3.txt -c config/config.weekend.js data/data3plus.txt
+```
+执行下面这条命令
+```bash
+$ node index.js -c config/config.weekend.js data/data3.txt
+```
+输出
+```bash
+Day 1:
+07:00AM Do the homework of Geography 30min
+07:30AM Do the homework of English 60min
+08:30AM Breakfast
+09:00AM Do the homework of maths 60min
+10:00AM Paly games 120min
+12:00PM Lunch
+02:00PM Chitchat on line 45min
+02:45PM Online shopping 50min
+03:35PM Do the laundry 45min
+04:20PM Make a call to Mom 60min
+05:20PM Make a call to Mason 40min
+06:00PM Dinner
+07:00PM Fit 40min
+07:40PM Watch news 20min
+08:00PM Watch movies 120min
+10:00PM Watering the flowers 5min
+10:05PM Feed a dog 5min
+10:10PM Burn bath 15min
+10:25PM Do housework 30min
+10:55PM Have a rest 20min
+11:15PM Make a call to Dad 10min
+11:25PM Sleep
+
+```
+恰好能把data3.txt里面的活动安排到一天以内完成。而如果我们活动不止data3.txt这些，我们可以把data3plus.txt也放进去，测试一下结果
+```bash
+$ node index.js -c config/config.weekend.js data/data3.txt data/data3plus.txt
+```
+输出
+```bash
+Day 1:
+07:00AM Do the homework of Geography 30min
+07:30AM Do the homework of English 60min
+08:30AM Breakfast
+09:00AM Do the homework of maths 60min
+10:00AM Paly games 120min
+12:00PM Lunch
+02:00PM Chitchat on line 45min
+02:45PM Online shopping 50min
+03:35PM Do the laundry 45min
+04:20PM Make a call to Mom 60min
+05:20PM Make a call to Mason 40min
+06:00PM Dinner
+07:00PM aaaaa aaaaa aaaaa aaaaa 120min
+09:00PM Watch movies 120min
+11:00PM Have a rest 20min
+11:20PM Make a call to Dad 10min
+11:30PM Sleep
+
+Day 2:
+11:15AM Watch news 20min
+11:35AM Watering the flowers 5min
+11:40AM Feed a dog 5min
+11:45AM Burn bath 15min
+12:00PM Do housework 30min
+12:30PM Brunch
+02:00PM ccccc ccccc ccccc ccccc 80min
+03:20PM Fit 40min
+04:00PM Waiting for Friends
+05:30PM zzzzz zzzzz zzzzz zzzzz 40min
+06:10PM yyyyy yyyyy yyyyy yyyyy 100min
+07:50PM fffff fffff fffff fffff 150min
+10:20PM eeeee eeeee eeeee eeeee 40min
+11:00PM Party Time
+11:15PM wwwww wwwww wwwww wwwww 10min
+11:25PM Sleep
+
+```
+可以看到活动都被安排到了周末这两天，细心的朋友可能会发现，活动其实还有剩余的没安排上，其实这是通过配置文件做了天数配置，因为周末只有两天，所以配置文件里面配置了相应的参数来控制行程的天数，使合理化。具体可以去项目根目录下的config文件夹下面查看config.weekend.js文件，里面已经备注好相应的注释。
+
+## 总结
+测试驱动开发是很高效的一种开发模式，在功能完全开发出来之前，我们可以先把测试写出来，尽可能的完整，那么在测试结果的驱动下，项目的开发就会很高效很有针对性，同时对代码的健壮性也是有很大帮助的，前提当然是你愿意花时间先去写出详细的测试代码。大有裨益。
+
 ## 思路
 该问题本质上带有算法考题的特点，给定输入，经过运算之后输出符合要求的结果，同时这个题目带有实际应用价值，项目根目录下的data目录下面data2.txt文件就是实际生活中的真实数据，所以问题还是挺有意思的。把各个活动安排到日程表里，可以归纳为是经典的01背包问题，每个活动相当于是待放入背包的物品，只能安排或者不安排，活动时长可视为物品的重量，至于活动的价值本项目默认设置为该项目耗费的时长，以此类推，背包的容量就是每一个时间段的时长，比如09:00到12:00这个sesison期间的时长是180分钟。所以该问题的日程安排算法可以间接通过01背包问题的解法来运算。
 ## 原题

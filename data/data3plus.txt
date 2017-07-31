@@ -1,0 +1,15 @@
+aaaaa aaaaa aaaaa aaaaa 120min
+bbbbb bbbbb bbbbb bbbbb 50min
+ccccc ccccc ccccc ccccc 80min
+ddddd ddddd ddddd ddddd 60min
+eeeee eeeee eeeee eeeee 40min
+fffff fffff fffff fffff 150min
+xxxxx xxxxx xxxxx xxxxx 55min
+yyyyy yyyyy yyyyy yyyyy 100min
+zzzzz zzzzz zzzzz zzzzz 40min
+qqqqq qqqqq qqqqq qqqqq 70min
+wwwww wwwww wwwww wwwww 10min
+rrrrr rrrrr rrrrr rrrrr 35min
+kkkkk kkkkk kkkkk kkkkk 90min
+sssss sssss sssss sssss 10min
+ooooo ooooo ooooo ooooo 25min

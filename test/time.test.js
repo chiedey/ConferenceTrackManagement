@@ -1,3 +1,4 @@
+const _prepare4Global = require('../index');
 const time   = require('../lib/time');
 const expect = require('chai').expect;
 

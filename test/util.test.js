@@ -1,5 +1,6 @@
+const _prepare4Global = require('../index');
 const expect = require('chai').expect;
-const util  = require('../lib/util');
+const util   = require('../lib/util');
 
 const talks = [
     'aaaaa aaaaa aaaaa aaaaa aaaaa 60min',

@@ -23,31 +23,31 @@ $ node index.js data/data1.txt
 将会看到类似的屏幕输出
 ```bash
 Track 1:
-09:00AM Programming in the Boondocks of Seattle 30min
-09:30AM Sit Down and Write 30min
-10:00AM Woah 30min
-10:30AM Rails for Python Developers lightning
-10:35AM Lua for the Masses 30min
-11:05AM Overdoing it in Python 45min
+09:00AM Ruby Errors from Mismatched Gem Versions 45min
+09:45AM Lua for the Masses 30min
+10:15AM Overdoing it in Python 45min
+11:00AM Writing Fast Tests Against Enterprise Rails 60min
 12:00PM Lunch
-01:00PM A World Without HackerNews 30min
-01:30PM Ruby vs. Clojure for Back-End Development 30min
-02:00PM User Interface CSS in Rails Apps 30min
-02:30PM Common Ruby Errors 45min
-03:15PM Ruby Errors from Mismatched Gem Versions 45min
-04:00PM Writing Fast Tests Against Enterprise Rails 60min
+01:00PM Rails Magic 60min
+02:00PM Woah 30min
+02:30PM Accounting-Driven Development 45min
+03:15PM Communicating Over Distance 60min
+04:15PM Common Ruby Errors 45min
 05:00PM Networking Event
 
 Track 2:
-09:00AM Pair Programming vs Noise 45min
-09:45AM Clojure Ate Scala (on my project) 45min
-10:30AM Communicating Over Distance 60min
+09:00AM Clojure Ate Scala (on my project) 45min
+09:45AM Ruby on Rails: Why We Should Move On 60min
+10:45AM Pair Programming vs Noise 45min
+11:30AM Sit Down and Write 30min
 12:00PM Lunch
-01:00PM Ruby on Rails Legacy App Maintenance 60min
-02:00PM Ruby on Rails: Why We Should Move On 60min
-03:00PM Rails Magic 60min
-04:00PM Accounting-Driven Development 45min
-04:45PM Networking Event
+01:00PM User Interface CSS in Rails Apps 30min
+01:30PM A World Without HackerNews 30min
+02:00PM Ruby on Rails Legacy App Maintenance 60min
+03:00PM Ruby vs. Clojure for Back-End Development 30min
+03:30PM Programming in the Boondocks of Seattle 30min
+04:00PM Rails for Python Developers lightning
+04:05PM Networking Event
 
 ```
 ## 测试
@@ -111,66 +111,66 @@ $ node index.js data/*
 将会看到类似的屏幕输出
 ```bash
 Track 1:
-09:00AM Watering the flowers 10min
-09:10AM Watch news 20min
-09:30AM Feed a dog 5min
-09:35AM Have a rest 20min
-09:55AM Make a call to Dad 10min
-10:05AM 《人事制度介绍》 20min
-10:25AM Sit Down and Write 30min
-10:55AM Woah 30min
-11:25AM Rails for Python Developers lightning
-11:30AM Burn bath 15min
+09:00AM Ruby Errors from Mismatched Gem Versions 45min
+09:45AM Lua for the Masses 30min
+10:15AM Overdoing it in Python 45min
+11:00AM Writing Fast Tests Against Enterprise Rails 60min
 12:00PM Lunch
-01:00PM User Interface CSS in Rails Apps 30min
-01:30PM Do the homework of Geography 30min
-02:00PM 《行政制度介绍》 30min
-02:30PM Programming in the Boondocks of Seattle 30min
-03:00PM A World Without HackerNews 30min
-03:30PM Ruby vs. Clojure for Back-End Development 30min
-04:00PM Writing Fast Tests Against Enterprise Rails 60min
+01:00PM Rails Magic 60min
+02:00PM Woah 30min
+02:30PM Accounting-Driven Development 45min
+03:15PM Communicating Over Distance 60min
+04:15PM Common Ruby Errors 45min
 05:00PM Networking Event
 
 Track 2:
-09:00AM Common Ruby Errors 45min
-09:45AM Ruby Errors from Mismatched Gem Versions 45min
-10:30AM Lua for the Masses 30min
-11:00AM Overdoing it in Python 45min
+09:00AM Clojure Ate Scala (on my project) 45min
+09:45AM Ruby on Rails: Why We Should Move On 60min
+10:45AM Pair Programming vs Noise 45min
+11:30AM Sit Down and Write 30min
 12:00PM Lunch
-01:00PM 《财务制度介绍》 45min
-01:45PM Clojure Ate Scala (on my project) 45min
-02:30PM Pair Programming vs Noise 45min
-03:15PM Accounting-Driven Development 45min
-04:00PM Communicating Over Distance 60min
+01:00PM 《行业介绍及发展历程》 60min
+02:00PM User Interface CSS in Rails Apps 30min
+02:30PM A World Without HackerNews 30min
+03:00PM Ruby on Rails Legacy App Maintenance 60min
+04:00PM Ruby vs. Clojure for Back-End Development 30min
+04:30PM Programming in the Boondocks of Seattle 30min
 05:00PM Networking Event
 
 Track 3:
-09:00AM Do housework 45min
-09:45AM Chitchat on line 45min
-10:30AM Do the laundry 45min
-11:15AM Make a call to Mason 40min
-12:00PM Lunch
-01:00PM 《行业介绍及发展历程》 60min
-02:00PM Ruby on Rails Legacy App Maintenance 60min
-03:00PM Ruby on Rails: Why We Should Move On 60min
-04:00PM Rails Magic 60min
-05:00PM Networking Event
-
-Track 4:
 09:00AM 《产品中心介绍》 60min
 10:00AM 《资讯数据中心介绍》 60min
 11:00AM 《财经新媒体介绍》 60min
 12:00PM Lunch
-01:00PM Online shopping 60min
-02:00PM Make a call to Mom 60min
-03:00PM Do the homework of maths 60min
-04:00PM Do the homework of English 60min
+01:00PM Do the homework of maths 60min
+02:00PM Do the homework of English 60min
+03:00PM Paly games 120min
+05:00PM Networking Event
+
+Track 4:
+09:00AM Make a call to Dad 10min
+09:10AM Make a call to Mason 40min
+09:50AM Do the homework of Geography 30min
+10:20AM 《人事制度介绍》 20min
+10:40AM 《财务制度介绍》 45min
+11:25AM 《行政制度介绍》 30min
+11:55AM Rails for Python Developers lightning
+12:00PM Lunch
+01:00PM Watering the flowers 10min
+01:10PM Chitchat on line 45min
+01:55PM Online shopping 60min
+02:55PM Have a rest 20min
+03:15PM Do the laundry 45min
+04:00PM Make a call to Mom 60min
 05:00PM Networking Event
 
 Track 5:
-09:00AM Paly games 120min
+09:00AM Watch movies 120min
+11:00AM Burn bath 15min
+11:15AM Do housework 45min
 12:00PM Lunch
-01:00PM Watch movies 120min
+01:00PM Watch news 20min
+01:20PM Feed a dog 5min
 04:00PM Networking Event
 
 ```

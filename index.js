@@ -11,7 +11,6 @@ const cfgDefault = './config/config.js';
 //处理命令行参数，支持输入多个文件，支持程序选项
 let idx;
 let cfg;
-let files;
 let argv = process.argv.slice(2);
 for (let i = 0; i < cfgArg.length; i++) {
     idx = argv.indexOf(cfgArg[i]);
@@ -20,16 +19,14 @@ for (let i = 0; i < cfgArg.length; i++) {
 if (idx != -1) {
     let cfgFile = argv[idx+1];
     if (!cfgFile) throw new Error('Error[Please set the config file]');
-    cfg = `${process.cwd()}/${cfgFile}`;
+    cfg = util.path.getRightPath(new Array(cfgFile))[0];
     argv.splice(idx, cfgLength);
 } else cfg = cfgDefault;
 
 global.config = require(cfg);
 
-files = argv;
-files.forEach((file, idx) => {files[idx] = `${process.cwd()}/${file}`;});
-
 //获取文件内容，并做进一步处理
+let files = util.path.getRightPath(argv);
 reader.getTalkList(files).then(talkList => {
     //解析文件内容
     let talks = util.array.merge(talkList);

@@ -42,4 +42,8 @@ describe('Testing for time.js', () => {
     it("[time.isExcess('18:01', '18:01')] When the first argument is the same as the second argument, should return false", () => {
         expect(time.isExcess('18:01', '18:01')).to.not.be.ok;
     });
+
+    it("[time.isExcess('19:00', '18:01')] 19:00 was later than 18:01, should return true", () => {
+        expect(time.isExcess('19:00', '18:01')).to.be.ok;
+    });
 });

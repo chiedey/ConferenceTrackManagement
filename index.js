@@ -45,6 +45,10 @@ reader.getTalkList(files).then(talkList => {
         this.track.sessions.forEach(session => {
             //问题归纳为01背包问题，通过动态规划把合适的活动安排到合适的时间段
             let idxs = ai.dp.kp.zeroOne(talks, session.timeRemain);
+            if (!idxs[0]) {
+                idxs = [];
+                talks = [];
+            }
 
             let mark = session.begin;
             idxs.forEach(idx => {

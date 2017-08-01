@@ -11,6 +11,14 @@ const talks = [
     'zzzzz zzzzz zzzzz zzzzz zzzzz 50min'
 ];
 
+const paths = [
+    './index.js',
+    './dir/test.cpp',
+    '../../../qwer.html',
+    '/xxx/yyy/zzz',
+    '/xxx/yyy/zzz/abc.js'
+];
+
 describe('Testing for util.js', () => {
     it("[util.array.merge([[1], [2]])] Should return a array", () => {
         expect(util.array.merge([[1], [2]])).to.be.an('array');
@@ -43,5 +51,13 @@ describe('Testing for util.js', () => {
     it("[util.talk.str2Obj(talks)] The element of results should be a object", () => {
         let x = util.talk.str2Obj(talks);
         expect(x[0]).to.be.an('object');
+    });
+
+    it("[util.path.getRightPath(paths)] Should return a array", () => {
+        expect(util.path.getRightPath(paths)).to.be.an('array');
+    });
+
+    it("[util.path.getRightPath(['/'])] Should return a ['/']", () => {
+        expect(util.path.getRightPath(['/'])).to.be.deep.equal(['/']);
     });
 });

@@ -3,7 +3,13 @@ module.exports = config = {
     timeUnit: 'min',
     lightning: {
         symbol: 'lightning',
-        timeCost: 5
+        timeCost: 5,
+        /*
+        merge: {
+            break: 'Have a rest...',
+            timeCost: 10
+        }
+        */
     },
     limit: {
     },
@@ -11,8 +17,8 @@ module.exports = config = {
         section: {
             split: '-',
             default: [
-                '09:00-12:30-Lunch',
-                '13:30-17:00-Networking Event'
+                '09:00-12:00-Lunch',
+                '13:00-17:00-Networking Event'
             ]
         },
         limit: {

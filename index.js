@@ -52,6 +52,16 @@ reader.getTalkList(files).then(talkList => {
                 let talk = talks[idx];
                 talk.scheduled = mark;
                 mark = time.elapse(mark, talk.timeCost);
+
+                if (talk.type === 'merged') {
+                    let tmp = talk.scheduled;
+                    talk.merged.forEach((item, idx) => {
+                        item.scheduled = tmp;
+                        tmp = time.elapse(tmp, item.timeCost);
+                        if ((idx+1) === talk.merged.length) talk.relaxTime = tmp;
+                    });
+                }
+
                 session.talks.push(talk);
                 session.timeUsed += talk.timeCost;
                 session.timeRemain -= talk.timeCost;
